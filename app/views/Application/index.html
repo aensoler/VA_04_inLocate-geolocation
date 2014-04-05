@@ -1,0 +1,67 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<canvas id="myCanvas" width="500" height="500"></canvas>
+#{list items:circunferencias, as:'circunferencia'}
+	<script>
+	
+		var canvas=document.getElementById('myCanvas');
+		var ctx=canvas.getContext('2d');
+		ctx.beginPath();
+		ctx.arc(${circunferencia.centro.x},500-${circunferencia.centro.y},${circunferencia.radio},0,2*Math.PI);
+		ctx.stroke();
+		
+	</script>
+#{/list}
+<script>
+	var canvas=document.getElementById('myCanvas');
+	var ctx=canvas.getContext('2d');
+	ctx.beginPath();
+	ctx.arc(${((int)punto.x)},500-${((int)punto.y)},50,0,2*Math.PI);
+	ctx.stroke();
+</script>
+<script>
+	var canvas=document.getElementById('myCanvas');
+	var ctx=canvas.getContext('2d');
+	/*
+	ctx.moveTo(0,0);
+	ctx.lineTo(0,400);
+	ctx.stroke();
+	ctx.moveTo(50,0);
+	ctx.lineTo(50,400);
+	ctx.stroke();
+	ctx.moveTo(100,0);
+	ctx.lineTo(100,400);
+	ctx.stroke();
+	ctx.moveTo(150,0);
+	ctx.lineTo(150,400);
+	ctx.stroke();
+	ctx.moveTo(200,0);
+	ctx.lineTo(200,400);
+	ctx.stroke();
+	ctx.moveTo(0,0);
+	ctx.lineTo(400,0);
+	ctx.stroke();
+	ctx.moveTo(0,50);
+	ctx.lineTo(400,50);
+	ctx.stroke();
+	ctx.moveTo(0,100);
+	ctx.lineTo(400,100);
+	ctx.stroke();
+	ctx.moveTo(0,150);
+	ctx.lineTo(400,150);
+	ctx.stroke();
+	ctx.moveTo(0,200);
+	ctx.lineTo(400,200);
+	ctx.stroke();
+	
+	ctx.moveTo(0,400);
+	ctx.lineTo(400,0);
+	ctx.stroke();
+	*/
+	ctx.fillRect(100,500-100,10,10);
+	ctx.fillRect(400,500-100,10,10);
+   	ctx.fillRect(400,500-400,10,10);
+   	ctx.fillRect(100,500-400,10,10);
+	ctx.stroke();
+</script> 
